@@ -7,4 +7,7 @@ cp /usr/bin/python $DIR
 $DIR/easy_install pip
 
 # Activate the venv by default
-su root -c "echo 'source $DIR/activate' >> /etc/profile"
+if [ "$1" = "--auto" ]
+then
+    su root -c "echo 'source $DIR/activate' >> /etc/profile"
+fi
