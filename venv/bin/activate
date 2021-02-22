@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/home/nao/ReadingToRobot/venv'
+VIRTUAL_ENV='/home/nao/venv'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi
@@ -60,16 +60,6 @@ export PATH
 if ! [ -z "${PYTHONHOME+_}" ] ; then
     _OLD_VIRTUAL_PYTHONHOME="$PYTHONHOME"
     unset PYTHONHOME
-fi
-
-if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT-}" ] ; then
-    _OLD_VIRTUAL_PS1="${PS1-}"
-    if [ "x" != x ] ; then
-        PS1="${PS1-}"
-    else
-        PS1="(`basename \"$VIRTUAL_ENV\"`) ${PS1-}"
-    fi
-    export PS1
 fi
 
 # Make sure to unalias pydoc if it's already there
